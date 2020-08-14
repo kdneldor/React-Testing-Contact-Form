@@ -14,7 +14,7 @@ const ContactForm = () => {
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="firstName">First Name*</label>
+          <label htmlFor="firstName" data-testid="FirstName*">First Name*</label>
           <input
             name="firstName"
             placeholder="Edd"
@@ -26,7 +26,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
+          <label htmlFor="lastName" data-testid="LastName*">Last Name*</label>
           <input
             name="lastName"
             placeholder="Burke"
@@ -38,7 +38,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" placeholder="bluebill1049@hotmail.com" data-testid="Email">
             Email*
           </label>
           <input name="email" ref={register({ required: true })} />
@@ -47,7 +47,7 @@ const ContactForm = () => {
           )}
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" data-testid="Message">Message</label>
           <textarea name="message" ref={register({ required: false })} />
         </div>
         {data && (
@@ -55,7 +55,7 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input type="submit" data-testid="submit"/>
       </form>
     </div>
   );
